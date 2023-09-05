@@ -21,6 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO save(CustomerDTO data) {
         CustomerEntity entity = CustomerMapper.INSTANCE.toEntity(data);
+        entity.getAccounts().forEach(e -> e.setCustomer(entity));
         return CustomerMapper.INSTANCE.toDto(customerRepository.save(entity));
     }
 
