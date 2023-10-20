@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
-@Order(0)
+@Order(2)
 @Slf4j
 public class RequestResponseLoggingFilter implements Filter {
 
